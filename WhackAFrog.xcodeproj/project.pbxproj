@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FD21F38D1760028B9AF /* AppDelegate.swift */; };
-		CF092FD51F38D1760028B9AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FD41F38D1760028B9AF /* ViewController.swift */; };
 		CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD61F38D1760028B9AF /* Main.storyboard */; };
 		CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD91F38D1760028B9AF /* Assets.xcassets */; };
 		CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FDB1F38D1760028B9AF /* LaunchScreen.storyboard */; };
 		CF092FE81F38D1760028B9AF /* WhackAFrogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FE71F38D1760028B9AF /* WhackAFrogTests.swift */; };
 		CF092FF31F38D1760028B9AF /* WhackAFrogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */; };
+		CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */; };
+		CF38FA9C1F3C9B4800D55DE7 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CF38FA9B1F3C9B4800D55DE7 /* Images */; };
+		CF38FAA41F3CB47C00D55DE7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAA31F3CB47C00D55DE7 /* Game.swift */; };
+		CF38FAA61F3CB53200D55DE7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAA51F3CB53200D55DE7 /* Board.swift */; };
+		CF38FAA81F3CB5F300D55DE7 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAA71F3CB5F300D55DE7 /* Tile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,6 @@
 /* Begin PBXFileReference section */
 		CF092FCF1F38D1760028B9AF /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FD21F38D1760028B9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF092FD41F38D1760028B9AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF092FD71F38D1760028B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF092FD91F38D1760028B9AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF092FDC1F38D1760028B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,11 @@
 		CF092FEE1F38D1760028B9AF /* WhackAFrogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhackAFrogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackAFrogUITests.swift; sourceTree = "<group>"; };
 		CF092FF41F38D1760028B9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		CF38FA9B1F3C9B4800D55DE7 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		CF38FAA31F3CB47C00D55DE7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		CF38FAA51F3CB53200D55DE7 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		CF38FAA71F3CB5F300D55DE7 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,8 @@
 		CF092FC61F38D1760028B9AF = {
 			isa = PBXGroup;
 			children = (
+				CF38FAA21F3CB45900D55DE7 /* Logic */,
+				CF38FA9B1F3C9B4800D55DE7 /* Images */,
 				CF092FD11F38D1760028B9AF /* WhackAFrog */,
 				CF092FE61F38D1760028B9AF /* WhackAFrogTests */,
 				CF092FF11F38D1760028B9AF /* WhackAFrogUITests */,
@@ -98,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CF092FD21F38D1760028B9AF /* AppDelegate.swift */,
-				CF092FD41F38D1760028B9AF /* ViewController.swift */,
+				CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */,
 				CF092FD61F38D1760028B9AF /* Main.storyboard */,
 				CF092FD91F38D1760028B9AF /* Assets.xcassets */,
 				CF092FDB1F38D1760028B9AF /* LaunchScreen.storyboard */,
@@ -123,6 +133,16 @@
 				CF092FF41F38D1760028B9AF /* Info.plist */,
 			);
 			path = WhackAFrogUITests;
+			sourceTree = "<group>";
+		};
+		CF38FAA21F3CB45900D55DE7 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				CF38FAA31F3CB47C00D55DE7 /* Game.swift */,
+				CF38FAA51F3CB53200D55DE7 /* Board.swift */,
+				CF38FAA71F3CB5F300D55DE7 /* Tile.swift */,
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF38FA9C1F3C9B4800D55DE7 /* Images in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
 				CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */,
@@ -259,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF092FD51F38D1760028B9AF /* ViewController.swift in Sources */,
+				CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */,
+				CF38FAA41F3CB47C00D55DE7 /* Game.swift in Sources */,
+				CF38FAA81F3CB5F300D55DE7 /* Tile.swift in Sources */,
+				CF38FAA61F3CB53200D55DE7 /* Board.swift in Sources */,
 				CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +531,7 @@
 				CF092FF91F38D1760028B9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF092FFA1F38D1760028B9AF /* Build configuration list for PBXNativeTarget "WhackAFrogTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +540,7 @@
 				CF092FFC1F38D1760028B9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF092FFD1F38D1760028B9AF /* Build configuration list for PBXNativeTarget "WhackAFrogUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +549,7 @@
 				CF092FFF1F38D1760028B9AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
