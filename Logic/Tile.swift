@@ -14,16 +14,27 @@ class Tile: NSObject {
         case Bad, Good, Empty
     }
     
+    var tileTimer: Timer!
     var tileState: TileStates {
         get{
             return self.tileState
         }
-        set (newState){
-            self.tileState = newState
+        set(state){
+            self.tileState = state
         }
     }
     
     override init(){
         //tileState = TileStates.Empty
+    }
+    
+    func setTileStateWithTimer(state: TileStates, time: Double){
+        
+        self.tileState = state
+        tileTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+    }
+    
+    func update() {
+            self.tileState = TileStates.Empty
     }
 }

@@ -37,8 +37,8 @@ class Board: NSObject {
         return randomInt(min: minNumberOfTiles, max: maxNumberOfTiles)
     }
     
-    func roleRandomTimeForTile() -> Int{
-        return randomInt(min: minTileTime, max: maxTileTime)
+    func roleRandomTimeForTile() -> Double{
+        return Double(randomInt(min: minTileTime, max: maxTileTime))
     }
     
     func roleRandomTargetTile() -> Int{
@@ -65,10 +65,19 @@ class Board: NSObject {
             let tileTarget = roleRandomTargetTile()
             let tileTime = roleRandomTimeForTile()
             
-            // set Timer 
+            board[tileTarget].setTileStateWithTimer(state: state, time: tileTime)
             
         }
-        
+    }
+    
+    func clickTile (pos: Int){
+        setTileStateByPosition(pos: pos, state: Tile.TileStates.Empty)
+    }
+    
+    func clickAllTiles(){
+        for i in 0 ..< numOfTiles{
+            clickTile(pos: i)
+        }
     }
     
 }
