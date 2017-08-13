@@ -44,7 +44,11 @@ class Board: NSObject {
     func roleRandomTargetTile() -> Int{
         
         var target = randomInt(min: 0, max: numOfTiles)
-        while board[target].tileState != Tile.TileStates.Empty{
+        
+        print(board[target].getTileState())
+        print(Tile.TileStates.Empty)
+        
+        while board[target].getTileState() != Tile.TileStates.Empty{
             target = randomInt(min: 0, max: numOfTiles)
         }
         
@@ -56,7 +60,7 @@ class Board: NSObject {
     }
     
     
-    func setFrogs (state: Tile.TileStates){
+    func setFrogs (tileState: Tile.TileStates){
         
         let numberOfTilesRolled = roleRandomNumberOfTiles()
         
@@ -65,7 +69,7 @@ class Board: NSObject {
             let tileTarget = roleRandomTargetTile()
             let tileTime = roleRandomTimeForTile()
             
-            board[tileTarget].setTileStateWithTimer(state: state, time: tileTime)
+            board[tileTarget].setTileStateWithTimer(state: tileState, time: tileTime)
             
         }
     }

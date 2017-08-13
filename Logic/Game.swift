@@ -42,8 +42,8 @@ class Game: NSObject {
     
     func setFrogs(){
         
-        board.setFrogs(state: Tile.TileStates.Bad)
-        board.setFrogs(state: Tile.TileStates.Good)
+        board.setFrogs(tileState: Tile.TileStates.Bad)
+        board.setFrogs(tileState: Tile.TileStates.Good)
         
     }
     
@@ -54,6 +54,7 @@ class Game: NSObject {
     }
     
     func stop(){
+        
         gameTimer.invalidate()
         frogTimer.invalidate()
         clickAllTiles()
@@ -65,8 +66,16 @@ class Game: NSObject {
         checkTime()
     }
     
+    func getGameTimer() -> Int{
+        return gameTimerCounter
+    }
+    
     func clickAllTiles(){
         board.clickAllTiles()
+    }
+    
+    func getTileStateByPosition(pos: Int) -> Tile.TileStates {
+        return board.getTileStateByPosition(pos: pos)
     }
     
     func playerClickedOnTile(pos: Int){
@@ -79,6 +88,8 @@ class Game: NSObject {
         if tileState == Tile.TileStates.Bad && score != 0{
             score -= points
         }
+        
+         board.clickTile(pos: pos)
         
     }
     

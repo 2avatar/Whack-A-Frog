@@ -15,23 +15,20 @@ class Tile: NSObject {
     }
     
     var tileTimer: Timer!
-    var tileState: TileStates {
-        get{
-            return self.tileState
-        }
-        set(state){
-            self.tileState = state
-        }
-    }
+    var tileState: TileStates!
     
     override init(){
-        //tileState = TileStates.Empty
+       tileState = TileStates.Empty
     }
     
     func setTileStateWithTimer(state: TileStates, time: Double){
         
         self.tileState = state
         tileTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+    }
+    
+    func getTileState() -> TileStates{
+        return tileState
     }
     
     func update() {

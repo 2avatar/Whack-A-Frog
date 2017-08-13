@@ -12,7 +12,7 @@
         <!--Collection View Controller-->
         <scene sceneID="qJa-w5-Uyz">
             <objects>
-                <collectionViewController id="kHF-h9-qKg" customClass="CollectionViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="game" id="kHF-h9-qKg" customClass="CollectionViewController" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="g3f-zP-sDm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,59 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf1-cG-1vh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351.19999999999999" y="-215.44227886056973"/>
+            <point key="canvasLocation" x="-38" y="-564"/>
+        </scene>
+        <!--Game Over-->
+        <scene sceneID="aa2-yl-gO1">
+            <objects>
+                <viewController storyboardIdentifier="over" id="bCh-Kk-47U" customClass="GameOver" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nVF-ng-5Nz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ey3-k4-7q3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EiW-kg-kg1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GJ!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu0-ky-nTa">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwp-aD-5Di" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="-564"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="ZoU-o1-LgP">
+            <objects>
+                <viewController id="F2J-OT-Idy" customClass="Main" customModule="WhackAFrog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7MD-Ah-XiD"/>
+                        <viewControllerLayoutGuide type="bottom" id="9gj-rk-tff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dzw-jG-itI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdK-mN-qce">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlC-bE-2Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="-564"/>
         </scene>
     </scenes>
 </document>
