@@ -10,12 +10,12 @@ import UIKit
 
 class Board: NSObject {
     
-    var board: [Tile]
-    let numOfTiles: Int
-    let minTileTime = 2
-    let maxTileTime = 4
-    let minNumberOfTiles = 0
-    let maxNumberOfTiles = 4
+    private var board: [Tile]
+    private let numOfTiles: Int
+    private let minTileTime = 2
+    private let maxTileTime = 4
+    private let minNumberOfTiles = 0
+    private let maxNumberOfTiles = 4
     
     init (numOfTiles: Int){
         board = [Tile]()
@@ -25,23 +25,23 @@ class Board: NSObject {
         }
     }
     
-    func setTileStateByPosition(pos: Int, state: Tile.TileStates){
-        board[pos].tileState = state
+    private func setTileStateByPosition(pos: Int, state: Tile.TileStates){
+        board[pos].setTileState(state: state)
     }
     
-    func getTileStateByPosition(pos: Int) -> Tile.TileStates{
-        return board[pos].tileState
+    public func getTileStateByPosition(pos: Int) -> Tile.TileStates{
+        return board[pos].getTileState()
     }
     
-    func roleRandomNumberOfTiles() -> Int{
+    private func roleRandomNumberOfTiles() -> Int{
         return randomInt(min: minNumberOfTiles, max: maxNumberOfTiles)
     }
     
-    func roleRandomTimeForTile() -> Int{
+    private func roleRandomTimeForTile() -> Int{
         return randomInt(min: minTileTime, max: maxTileTime)
     }
     
-    func roleRandomTargetTile() -> Int{
+    private func roleRandomTargetTile() -> Int{
         
         var target = randomInt(min: 0, max: (numOfTiles-1))
         
@@ -52,30 +52,34 @@ class Board: NSObject {
         return target
     }
     
-    func randomInt(min: Int, max: Int) -> Int {
+    private func randomInt(min: Int, max: Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min)))
     }
     
     
-    func setFrogs (tileState: Tile.TileStates){
+    public func setFrogs (tileState: Tile.TileStates){
         
         let numberOfTilesRolled = roleRandomNumberOfTiles()
+        
+        print("number of tiles: \(numberOfTilesRolled)")
         
         for _ in 0 ..< numberOfTilesRolled{
             
             let tileTarget = roleRandomTargetTile()
             let tileTime = roleRandomTimeForTile()
-            
+            print("tile target: \(tileTarget), tile time: \(tileTime)")
             board[tileTarget].setTileStateWithTimer(state: tileState, time: Double(tileTime))
             
         }
     }
     
-    func clickTile (pos: Int){
+   public func clickTile (pos: Int){
+        print("tile \(pos) before clicked, state: \(getTileStateByPosition(pos: pos))")
         setTileStateByPosition(pos: pos, state: Tile.TileStates.Empty)
+         print("tile \(pos) after click, state: \(getTileStateByPosition(pos: pos))")
     }
     
-    func clickAllTiles(){
+    public func clickAllTiles(){
         for i in 0 ..< numOfTiles{
             clickTile(pos: i)
         }

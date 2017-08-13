@@ -10,28 +10,28 @@ import UIKit
 
 class Game: NSObject {
     
-    var board: Board
-    let points = 1
-    let gameMaxTime = 60 // seconds
-    var gameTimerCounter: Int
-    var gameTimer: Timer!
-    let gametimerInterval = Double(1)
-    var frogTimer: Timer!
-    let frogTimerInterval = Double(2)
-    var score: Int
-    var over: Bool
+    private var board: Board
+    private let points = 1
+    private let gameMaxTime = 10 // seconds
+    private var gameTimerCounter: Int
+    private var gameTimer: Timer!
+    private let gametimerInterval = Double(1)
+    private var frogTimer: Timer!
+    private let frogTimerInterval = Double(2)
+    private var score: Int
+    private var gameOver: Bool
     
     
     init (numOfTiles: Int){
         
         self.score = 0
         self.gameTimerCounter = 0
-        self.over = false
+        self.gameOver = false
         board = Board(numOfTiles: numOfTiles)
         
     }
     
-    func play(){
+    public func play(){
         
            gameTimer = Timer.scheduledTimer(timeInterval: gametimerInterval, target: self, selector: #selector(updateGameTimer), userInfo: nil, repeats: true)
         
@@ -40,45 +40,47 @@ class Game: NSObject {
         
     }
     
-    func setFrogs(){
-        
+    public func setFrogs(){
+        print("for bad")
         board.setFrogs(tileState: Tile.TileStates.Bad)
+        print("for good")
         board.setFrogs(tileState: Tile.TileStates.Good)
         
     }
     
-    func checkTime(){
+    private func checkTime(){
         if gameTimerCounter == gameMaxTime{
             stop()
         }
     }
     
-    func stop(){
+    private func stop(){
         
         gameTimer.invalidate()
         frogTimer.invalidate()
         clickAllTiles()
-        over = false
+        gameOver = true
     }
     
-    func updateGameTimer(){
+    public func updateGameTimer(){
+        print("time: \(gameTimerCounter)")
         gameTimerCounter += 1
         checkTime()
     }
     
-    func getGameTimer() -> Int{
-        return gameTimerCounter
-    }
-    
-    func clickAllTiles(){
+    private func clickAllTiles(){
         board.clickAllTiles()
     }
     
-    func getTileStateByPosition(pos: Int) -> Tile.TileStates {
+    public func over() -> Bool{
+        return gameOver
+    }
+    
+    public func getTileStateByPosition(pos: Int) -> Tile.TileStates {
         return board.getTileStateByPosition(pos: pos)
     }
     
-    func playerClickedOnTile(pos: Int){
+    public func playerClickedOnTile(pos: Int){
         
         let tileState = board.getTileStateByPosition(pos: pos)
         
@@ -89,6 +91,7 @@ class Game: NSObject {
             score -= points
         }
         
+        print("Score: \(score)")
          board.clickTile(pos: pos)
         
     }

@@ -53,8 +53,8 @@
 		CF092FEE1F38D1760028B9AF /* WhackAFrogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhackAFrogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackAFrogUITests.swift; sourceTree = "<group>"; };
 		CF092FF41F38D1760028B9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF245F1E1F3E5F670040FA61 /* good.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = good.jpg; sourceTree = "<group>"; };
-		CF245F1F1F3E5F670040FA61 /* bad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bad.jpg; sourceTree = "<group>"; };
+		CF245F1E1F3E5F670040FA61 /* good.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = good.jpg; path = ../Images/good.jpg; sourceTree = "<group>"; };
+		CF245F1F1F3E5F670040FA61 /* bad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bad.jpg; path = ../Images/bad.jpg; sourceTree = "<group>"; };
 		CF245F251F3E66680040FA61 /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		CF245F271F3E668E0040FA61 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +113,8 @@
 		CF092FD11F38D1760028B9AF /* WhackAFrog */ = {
 			isa = PBXGroup;
 			children = (
+				CF245F1E1F3E5F670040FA61 /* good.jpg */,
+				CF245F1F1F3E5F670040FA61 /* bad.jpg */,
 				CF092FD21F38D1760028B9AF /* AppDelegate.swift */,
 				CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */,
 				CF092FD61F38D1760028B9AF /* Main.storyboard */,
@@ -156,8 +158,6 @@
 		CF38FAB31F3D186000D55DE7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CF245F1E1F3E5F670040FA61 /* good.jpg */,
-				CF245F1F1F3E5F670040FA61 /* bad.jpg */,
 			);
 			path = Images;
 			sourceTree = "<group>";

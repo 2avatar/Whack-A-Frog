@@ -10,28 +10,33 @@ import UIKit
 
 class Tile: NSObject {
     
-    enum TileStates {
+    public enum TileStates {
         case Bad, Good, Empty
     }
     
-    var tileTimer: Timer!
-    var tileState: TileStates!
+    private var tileTimer: Timer!
+    private var tileState: TileStates!
     
     override init(){
        tileState = TileStates.Empty
     }
     
-    func setTileStateWithTimer(state: TileStates, time: Double){
+    public func setTileStateWithTimer(state: TileStates, time: Double){
         
         self.tileState = state
-        tileTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(update), userInfo: nil, repeats: false)
+        tileTimer = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(updateTile), userInfo: nil, repeats: false)
     }
     
-    func getTileState() -> TileStates{
+    public func getTileState() -> TileStates{
         return tileState
     }
     
-    func update() {
-            self.tileState = TileStates.Empty
+    public func updateTile(){
+        setTileState(state: TileStates.Empty)
+
+    }
+    
+    public func setTileState(state: TileStates) {
+        self.tileState = state
     }
 }
