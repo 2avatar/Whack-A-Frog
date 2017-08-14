@@ -12,7 +12,7 @@ class Game: NSObject {
     
     private var board: Board
     private let points = 1
-    private let gameMaxTime = 15 // seconds
+    private let gameMaxTime = 60 // seconds
     private var gameTimerCounter: Int
     private var gameTimer: Timer!
     private let gametimerInterval = Double(1)
@@ -43,9 +43,7 @@ class Game: NSObject {
     }
     
     public func setFrogs(){
-        print("for bad")
         board.setFrogs(tileState: Tile.TileStates.Bad)
-        print("for good")
         board.setFrogs(tileState: Tile.TileStates.Good)
         
     }
@@ -72,7 +70,6 @@ class Game: NSObject {
     }
     
     public func updateGameTimer(){
-        print("time: \(gameTimerCounter)")
         gameTimerCounter += 1
         checkTime()
     }
@@ -108,7 +105,6 @@ class Game: NSObject {
             score -= points
         }
         
-        print("Score: \(score)")
          board.clickTile(pos: pos)
         
     }

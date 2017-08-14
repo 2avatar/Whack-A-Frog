@@ -13,7 +13,9 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     var game: Game!
     var viewTimer: Timer!
     var viewTimerInterval = Double(1)
-    let numOfTiles = 8
+    let numOfCols = 4
+    let numOfRows = 3
+    let TileMargin = CGFloat(5)
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -23,7 +25,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         // Do any additional setup after loading the view, typically from a nib.
    
         initiateTimer()
-        game = Game(numOfTiles: numOfTiles)
+        game = Game(numOfTiles: numOfCols*numOfRows)
         game.play()
         initiateLabels()
         
@@ -80,12 +82,31 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numOfTiles
+        return numOfRows
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return numOfCols
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
+        let rowsCount = CGFloat(numOfRows)
+        let colsCount = CGFloat(numOfCols)
+        let width = collectionView.frame.width / rowsCount - (rowsCount * TileMargin)
+        let height = collectionView.frame.height / colsCount - (colsCount * TileMargin)
+        
+        
+        return CGSize(width: width, height: height) // collectionView.frame.height * 0.9
+    }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        game.playerClickedOnTile(pos: indexPath.row)
+        let position = indexPath.section + (indexPath.row*numOfCols)
+
+        
+        game.playerClickedOnTile(pos: position)
           self.collectionView.reloadData()
         scoreLabel.text = "Score: \(game.getScore())"
     
@@ -95,19 +116,21 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
         
-        print("index: \(indexPath.row) , state: \(game.getTileStateByPosition(pos: indexPath.row))")
+        
         
         timerLabel.text = "Time: \(game.getTime())"
         
-        if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Bad){
+         let position = indexPath.section + (indexPath.row*numOfCols)
+        
+        if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Bad){
             cell.backgroundView = setCellImage(image: "Images/bad.jpg")
         }
         
-        if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Good){
+        if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Good){
             cell.backgroundView = setCellImage(image: "Images/good.jpg")
         }
         
-        if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Empty){
+        if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Empty){
             cell.backgroundView = nil
         }
         
@@ -119,6 +142,11 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(TileMargin, TileMargin, TileMargin, TileMargin)
+    }
+
     
     func setCellImage(image: String) -> UIImageView{
         return UIImageView(image: UIImage(named: image))

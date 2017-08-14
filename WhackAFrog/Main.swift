@@ -10,6 +10,9 @@ import UIKit
 
 class Main: UIViewController{
     
+    enum Difficulty{ case Hard, Medium, Easy }
+    
+    
     
     @IBOutlet weak var button: UIButton!
     

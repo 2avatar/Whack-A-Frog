@@ -61,22 +61,17 @@ class Board: NSObject {
         
         let numberOfTilesRolled = roleRandomNumberOfTiles()
         
-        print("number of tiles: \(numberOfTilesRolled)")
-        
         for _ in 0 ..< numberOfTilesRolled{
             
             let tileTarget = roleRandomTargetTile()
             let tileTime = roleRandomTimeForTile()
-            print("tile target: \(tileTarget), tile time: \(tileTime)")
             board[tileTarget].setTileStateWithTimer(state: tileState, time: Double(tileTime))
             
         }
     }
     
    public func clickTile (pos: Int){
-        print("tile \(pos) before clicked, state: \(getTileStateByPosition(pos: pos))")
         setTileStateByPosition(pos: pos, state: Tile.TileStates.Empty)
-         print("tile \(pos) after click, state: \(getTileStateByPosition(pos: pos))")
     }
     
     public func clickAllTiles(){
