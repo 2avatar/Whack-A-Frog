@@ -15,15 +15,15 @@ class Main: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         button = self.view.viewWithTag(2) as! UIButton
-        button.addTarget(self, action: Selector(("onClick:")), for: .touchUpInside)
+        button.addTarget(self, action: #selector(Main.onClick), for: .touchUpInside)
         
     }
     
     func onClick(){
         
-        let storyboard = UIStoryboard(name: "Main.storyboard", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc = storyboard.instantiateViewController(withIdentifier: "CollectionViewController") as UIViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "game") as UIViewController
         
         present(vc, animated: true, completion: nil)
         

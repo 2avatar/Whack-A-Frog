@@ -68,11 +68,6 @@ class CollectionViewController: UICollectionViewController{
             
             viewTimer.invalidate()
             
-            let storyboard = UIStoryboard(name: "Main.storyboard", bundle: nil)
-            
-            let vc = storyboard.instantiateViewController(withIdentifier: "over") as UIViewController
-        
-            present(vc, animated: true, completion: nil)
         }
         
         return cell
