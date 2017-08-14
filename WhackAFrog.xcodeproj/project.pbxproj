@@ -14,8 +14,8 @@
 		CF092FE81F38D1760028B9AF /* WhackAFrogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FE71F38D1760028B9AF /* WhackAFrogTests.swift */; };
 		CF092FF31F38D1760028B9AF /* WhackAFrogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */; };
 		CF12A8E11F425002004F125F /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E01F425002004F125F /* Images */; };
-		CF12A8E51F425275004F125F /* frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E31F425275004F125F /* frog.jpg */; };
-		CF12A8E61F425275004F125F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E41F425275004F125F /* play.png */; };
+		CF12A8E81F42536B004F125F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E71F42536B004F125F /* play.png */; };
+		CF12A8EA1F425370004F125F /* frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E91F425370004F125F /* frog.jpg */; };
 		CF245F281F3E668E0040FA61 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF245F271F3E668E0040FA61 /* Main.swift */; };
 		CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */; };
 		CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAD1F3D182F00D55DE7 /* Game.swift */; };
@@ -54,8 +54,8 @@
 		CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackAFrogUITests.swift; sourceTree = "<group>"; };
 		CF092FF41F38D1760028B9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF12A8E01F425002004F125F /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		CF12A8E31F425275004F125F /* frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frog.jpg; sourceTree = "<group>"; };
-		CF12A8E41F425275004F125F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		CF12A8E71F42536B004F125F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		CF12A8E91F425370004F125F /* frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frog.jpg; sourceTree = "<group>"; };
 		CF245F271F3E668E0040FA61 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CF38FAAD1F3D182F00D55DE7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		CF12A8E21F425208004F125F /* Logo */ = {
 			isa = PBXGroup;
 			children = (
-				CF12A8E31F425275004F125F /* frog.jpg */,
-				CF12A8E41F425275004F125F /* play.png */,
+				CF12A8E91F425370004F125F /* frog.jpg */,
+				CF12A8E71F42536B004F125F /* play.png */,
 			);
 			path = Logo;
 			sourceTree = "<group>";
@@ -270,11 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF12A8E11F425002004F125F /* Images in Resources */,
-				CF12A8E51F425275004F125F /* frog.jpg in Resources */,
+				CF12A8EA1F425370004F125F /* frog.jpg in Resources */,
+				CF12A8E81F42536B004F125F /* play.png in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
 				CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */,
-				CF12A8E61F425275004F125F /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
