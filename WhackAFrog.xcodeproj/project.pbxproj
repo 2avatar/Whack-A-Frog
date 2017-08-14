@@ -13,10 +13,7 @@
 		CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FDB1F38D1760028B9AF /* LaunchScreen.storyboard */; };
 		CF092FE81F38D1760028B9AF /* WhackAFrogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FE71F38D1760028B9AF /* WhackAFrogTests.swift */; };
 		CF092FF31F38D1760028B9AF /* WhackAFrogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */; };
-		CF12A8DE1F424A5B004F125F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8DC1F40FC4E004F125F /* play.png */; };
-		CF12A8DF1F424A76004F125F /* frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8D81F40F9C5004F125F /* frog.jpg */; };
-		CF245F201F3E5F670040FA61 /* good.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF245F1E1F3E5F670040FA61 /* good.jpg */; };
-		CF245F211F3E5F670040FA61 /* bad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF245F1F1F3E5F670040FA61 /* bad.jpg */; };
+		CF12A8E11F425002004F125F /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E01F425002004F125F /* Images */; };
 		CF245F281F3E668E0040FA61 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF245F271F3E668E0040FA61 /* Main.swift */; };
 		CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */; };
 		CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAD1F3D182F00D55DE7 /* Game.swift */; };
@@ -54,10 +51,7 @@
 		CF092FEE1F38D1760028B9AF /* WhackAFrogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhackAFrogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FF21F38D1760028B9AF /* WhackAFrogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackAFrogUITests.swift; sourceTree = "<group>"; };
 		CF092FF41F38D1760028B9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF12A8D81F40F9C5004F125F /* frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frog.jpg; sourceTree = "<group>"; };
-		CF12A8DC1F40FC4E004F125F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
-		CF245F1E1F3E5F670040FA61 /* good.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = good.jpg; sourceTree = "<group>"; };
-		CF245F1F1F3E5F670040FA61 /* bad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bad.jpg; sourceTree = "<group>"; };
+		CF12A8E01F425002004F125F /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		CF245F271F3E668E0040FA61 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CF38FAAD1F3D182F00D55DE7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -93,7 +87,7 @@
 		CF092FC61F38D1760028B9AF = {
 			isa = PBXGroup;
 			children = (
-				CF38FAB31F3D186000D55DE7 /* Images */,
+				CF12A8E01F425002004F125F /* Images */,
 				CF38FAA21F3CB45900D55DE7 /* Logic */,
 				CF092FD11F38D1760028B9AF /* WhackAFrog */,
 				CF092FE61F38D1760028B9AF /* WhackAFrogTests */,
@@ -152,17 +146,6 @@
 				CF38FAB11F3D184A00D55DE7 /* Tile.swift */,
 			);
 			path = Logic;
-			sourceTree = "<group>";
-		};
-		CF38FAB31F3D186000D55DE7 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				CF12A8DC1F40FC4E004F125F /* play.png */,
-				CF12A8D81F40F9C5004F125F /* frog.jpg */,
-				CF245F1E1F3E5F670040FA61 /* good.jpg */,
-				CF245F1F1F3E5F670040FA61 /* bad.jpg */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,10 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF12A8DF1F424A76004F125F /* frog.jpg in Resources */,
-				CF12A8DE1F424A5B004F125F /* play.png in Resources */,
-				CF245F211F3E5F670040FA61 /* bad.jpg in Resources */,
-				CF245F201F3E5F670040FA61 /* good.jpg in Resources */,
+				CF12A8E11F425002004F125F /* Images in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
 				CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */,
