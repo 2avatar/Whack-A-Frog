@@ -100,13 +100,13 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         timerLabel.text = "Time: \(game.getTime())"
         
         if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Bad){
-            
-            cell.backgroundView = setCellImage(image: "Images/bad.jpg")
+        
+            cell.backgroundView = setCellImage(image: "bad.jpg")
 
         }
         
         if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Good){
-            cell.backgroundView = setCellImage(image: "Images/good.jpg")
+            cell.backgroundView = setCellImage(image: "good.jpg")
         }
         
         if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Empty){
