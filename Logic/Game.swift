@@ -12,7 +12,7 @@ class Game: NSObject {
     
     private var board: Board
     private let points = 1
-    private let gameMaxTime = 60 // seconds
+    private let gameMaxTime = 15 // seconds
     private var gameTimerCounter: Int
     private var gameTimer: Timer!
     private let gametimerInterval = Double(1)
@@ -33,10 +33,12 @@ class Game: NSObject {
     
     public func play(){
         
-           gameTimer = Timer.scheduledTimer(timeInterval: gametimerInterval, target: self, selector: #selector(updateGameTimer), userInfo: nil, repeats: true)
+        gameOver = false;
+        
+        gameTimer = Timer.scheduledTimer(timeInterval: gametimerInterval, target: self, selector: #selector(updateGameTimer), userInfo: nil, repeats: true)
         
         
-           frogTimer = Timer.scheduledTimer(timeInterval: frogTimerInterval, target: self, selector: #selector(setFrogs), userInfo: nil, repeats: true)
+        frogTimer = Timer.scheduledTimer(timeInterval: frogTimerInterval, target: self, selector: #selector(setFrogs), userInfo: nil, repeats: true)
         
     }
     
@@ -54,12 +56,19 @@ class Game: NSObject {
         }
     }
     
-    private func stop(){
+    public func stop(){
         
         gameTimer.invalidate()
         frogTimer.invalidate()
         clickAllTiles()
         gameOver = true
+    }
+    
+    public func restart(){
+        gameTimerCounter = 0
+        score = 0
+        stop()
+        play()
     }
     
     public func updateGameTimer(){
@@ -74,6 +83,14 @@ class Game: NSObject {
     
     public func over() -> Bool{
         return gameOver
+    }
+    
+    public func getScore() -> Int{
+        return score
+    }
+    
+    public func getTime() -> Int{
+        return gameTimerCounter
     }
     
     public func getTileStateByPosition(pos: Int) -> Tile.TileStates {

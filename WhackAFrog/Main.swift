@@ -10,11 +10,12 @@ import UIKit
 
 class Main: UIViewController{
     
-    var button: UIButton!
+    
+    @IBOutlet weak var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        button = self.view.viewWithTag(2) as! UIButton
+    
         button.addTarget(self, action: #selector(Main.onClick), for: .touchUpInside)
         
     }

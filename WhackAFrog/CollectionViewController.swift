@@ -13,16 +13,61 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     var game: Game!
     var viewTimer: Timer!
     var viewTimerInterval = Double(1)
-    let numOfTiles = 10
+    let numOfTiles = 8
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        viewTimer = Timer.scheduledTimer(timeInterval: viewTimerInterval, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
+   
+        initiateTimer()
         game = Game(numOfTiles: numOfTiles)
         game.play()
+        initiateLabels()
+        
+    }
+    @IBAction func goBack(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "main") as UIViewController
+        
+        present(vc, animated: true, completion: nil)
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidLoad()
+        
+        if (viewTimer.isValid){
+            viewTimer.invalidate()
+        }
+        game.stop()
+        
+    }
+    
+    
+    @IBAction func reset(_ sender: Any) {
+        initiateTimer()
+        game.restart()
+        initiateLabels()
+    }
+    
+    func initiateLabels(){
+        scoreLabel.text = "Score: \(game.getScore())"
+        timerLabel.text = "Time: \(game.getTime())"
+    }
+    
+    func initiateTimer(){
+        
+        if (viewTimer != nil){
+            if (viewTimer.isValid){
+                viewTimer.invalidate()
+            }
+        }
+        viewTimer = Timer.scheduledTimer(timeInterval: viewTimerInterval, target: self, selector: #selector(updateView), userInfo: nil, repeats: true)
     }
     
     func updateView(){
@@ -41,7 +86,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         game.playerClickedOnTile(pos: indexPath.row)
-          self.collectionView?.reloadData()
+          self.collectionView.reloadData()
+        scoreLabel.text = "Score: \(game.getScore())"
     
     }
     
@@ -51,6 +97,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         print("index: \(indexPath.row) , state: \(game.getTileStateByPosition(pos: indexPath.row))")
         
+        timerLabel.text = "Time: \(game.getTime())"
         
         if (game.getTileStateByPosition(pos: indexPath.row) == Tile.TileStates.Bad){
             
