@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class Game: NSObject {
     
@@ -20,7 +21,7 @@ class Game: NSObject {
     private let frogTimerInterval = Double(2)
     private var score: Int
     private var gameOver: Bool
-    
+    private var clickOnFrogSound: AVAudioPlayer?
     
     init (numOfTiles: Int){
         
@@ -28,6 +29,18 @@ class Game: NSObject {
         self.gameTimerCounter = 0
         self.gameOver = false
         board = Board(numOfTiles: numOfTiles)
+        
+    }
+    
+    func playSound(soundName: String){
+        
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: ".mp3") else { return }
+        do{
+            clickOnFrogSound = try AVAudioPlayer(contentsOf: url)
+            clickOnFrogSound?.play()
+        }catch let error{
+            print(error.localizedDescription)
+        }
         
     }
     
@@ -60,6 +73,7 @@ class Game: NSObject {
         frogTimer.invalidate()
         clickAllTiles()
         gameOver = true
+
     }
     
     public func restart(){
@@ -100,9 +114,11 @@ class Game: NSObject {
         
         if tileState == Tile.TileStates.Good{
             score += points
+            playSound(soundName: "goodSound")
         }
         if tileState == Tile.TileStates.Bad && score != 0{
             score -= points
+            playSound(soundName: "badSound")
         }
         
          board.clickTile(pos: pos)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF034B331F4272090001FC99 /* goodSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF034B321F4272090001FC99 /* goodSound.mp3 */; };
+		CF034B351F42721A0001FC99 /* badSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF034B341F42721A0001FC99 /* badSound.mp3 */; };
 		CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FD21F38D1760028B9AF /* AppDelegate.swift */; };
 		CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD61F38D1760028B9AF /* Main.storyboard */; };
 		CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD91F38D1760028B9AF /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF034B321F4272090001FC99 /* goodSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goodSound.mp3; sourceTree = "<group>"; };
+		CF034B341F42721A0001FC99 /* badSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = badSound.mp3; sourceTree = "<group>"; };
 		CF092FCF1F38D1760028B9AF /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FD21F38D1760028B9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF092FD71F38D1760028B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 		CF38FAA21F3CB45900D55DE7 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CF034B321F4272090001FC99 /* goodSound.mp3 */,
+				CF034B341F42721A0001FC99 /* badSound.mp3 */,
 				CF38FAAD1F3D182F00D55DE7 /* Game.swift */,
 				CF38FAAF1F3D183C00D55DE7 /* Board.swift */,
 				CF38FAB11F3D184A00D55DE7 /* Tile.swift */,
@@ -272,6 +278,8 @@
 				CF12A8E11F425002004F125F /* Images in Resources */,
 				CF12A8EA1F425370004F125F /* frog.jpg in Resources */,
 				CF12A8E81F42536B004F125F /* play.png in Resources */,
+				CF034B351F42721A0001FC99 /* badSound.mp3 in Resources */,
+				CF034B331F4272090001FC99 /* goodSound.mp3 in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
 				CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */,

@@ -116,8 +116,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
         
-        
-        
         timerLabel.text = "Time: \(game.getTime())"
         
          let position = indexPath.section + (indexPath.row*numOfCols)
