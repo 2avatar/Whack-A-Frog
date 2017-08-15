@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CF034B331F4272090001FC99 /* goodSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF034B321F4272090001FC99 /* goodSound.mp3 */; };
 		CF034B351F42721A0001FC99 /* badSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF034B341F42721A0001FC99 /* badSound.mp3 */; };
+		CF034B371F4278F60001FC99 /* gameBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF034B361F4278F60001FC99 /* gameBG.jpg */; };
 		CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FD21F38D1760028B9AF /* AppDelegate.swift */; };
 		CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD61F38D1760028B9AF /* Main.storyboard */; };
 		CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD91F38D1760028B9AF /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		CF034B321F4272090001FC99 /* goodSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goodSound.mp3; sourceTree = "<group>"; };
 		CF034B341F42721A0001FC99 /* badSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = badSound.mp3; sourceTree = "<group>"; };
+		CF034B361F4278F60001FC99 /* gameBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameBG.jpg; sourceTree = "<group>"; };
 		CF092FCF1F38D1760028B9AF /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FD21F38D1760028B9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF092FD71F38D1760028B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		CF12A8E21F425208004F125F /* Logo */ = {
 			isa = PBXGroup;
 			children = (
+				CF034B361F4278F60001FC99 /* gameBG.jpg */,
 				CF12A8E91F425370004F125F /* frog.jpg */,
 				CF12A8E71F42536B004F125F /* play.png */,
 			);
@@ -279,6 +282,7 @@
 				CF12A8EA1F425370004F125F /* frog.jpg in Resources */,
 				CF12A8E81F42536B004F125F /* play.png in Resources */,
 				CF034B351F42721A0001FC99 /* badSound.mp3 in Resources */,
+				CF034B371F4278F60001FC99 /* gameBG.jpg in Resources */,
 				CF034B331F4272090001FC99 /* goodSound.mp3 in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
