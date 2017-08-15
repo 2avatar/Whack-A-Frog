@@ -121,11 +121,11 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
          let position = indexPath.section + (indexPath.row*numOfCols)
         
         if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Bad){
-            cell.backgroundView = setCellImage(image: "Images/bad.jpg")
+            cell.backgroundView = setCellImage(image: "Images/bad.png")
         }
         
         if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Good){
-            cell.backgroundView = setCellImage(image: "Images/good.jpg")
+            cell.backgroundView = setCellImage(image: "Images/good.png")
         }
         
         if (game.getTileStateByPosition(pos: position) == Tile.TileStates.Empty){
