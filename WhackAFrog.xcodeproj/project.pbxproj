@@ -11,6 +11,8 @@
 		CF034B351F42721A0001FC99 /* badSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF034B341F42721A0001FC99 /* badSound.mp3 */; };
 		CF034B371F4278F60001FC99 /* gameBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF034B361F4278F60001FC99 /* gameBG.jpg */; };
 		CF034B391F43D8480001FC99 /* mainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF034B381F43D8480001FC99 /* mainLogo.png */; };
+		CF034B3C1F43FC920001FC99 /* good.png in Resources */ = {isa = PBXBuildFile; fileRef = CF034B3A1F43FC920001FC99 /* good.png */; };
+		CF034B3D1F43FC920001FC99 /* bad.png in Resources */ = {isa = PBXBuildFile; fileRef = CF034B3B1F43FC920001FC99 /* bad.png */; };
 		CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092FD21F38D1760028B9AF /* AppDelegate.swift */; };
 		CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD61F38D1760028B9AF /* Main.storyboard */; };
 		CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF092FD91F38D1760028B9AF /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		CF034B341F42721A0001FC99 /* badSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = badSound.mp3; sourceTree = "<group>"; };
 		CF034B361F4278F60001FC99 /* gameBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameBG.jpg; sourceTree = "<group>"; };
 		CF034B381F43D8480001FC99 /* mainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainLogo.png; sourceTree = "<group>"; };
+		CF034B3A1F43FC920001FC99 /* good.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = good.png; sourceTree = "<group>"; };
+		CF034B3B1F43FC920001FC99 /* bad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bad.png; sourceTree = "<group>"; };
 		CF092FCF1F38D1760028B9AF /* WhackAFrog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAFrog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF092FD21F38D1760028B9AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF092FD71F38D1760028B9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		CF12A8E21F425208004F125F /* Logo */ = {
 			isa = PBXGroup;
 			children = (
+				CF034B3A1F43FC920001FC99 /* good.png */,
+				CF034B3B1F43FC920001FC99 /* bad.png */,
 				CF034B381F43D8480001FC99 /* mainLogo.png */,
 				CF034B361F4278F60001FC99 /* gameBG.jpg */,
 				CF12A8E91F425370004F125F /* frog.jpg */,
@@ -290,7 +296,9 @@
 				CF034B331F4272090001FC99 /* goodSound.mp3 in Resources */,
 				CF092FDD1F38D1760028B9AF /* LaunchScreen.storyboard in Resources */,
 				CF092FDA1F38D1760028B9AF /* Assets.xcassets in Resources */,
+				CF034B3D1F43FC920001FC99 /* bad.png in Resources */,
 				CF092FD81F38D1760028B9AF /* Main.storyboard in Resources */,
+				CF034B3C1F43FC920001FC99 /* good.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
