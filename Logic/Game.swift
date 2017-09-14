@@ -13,6 +13,7 @@ class Game: NSObject {
     
     private var board: Board
     private let points = 1
+    private let numOfLifes = 3
     private let gameMaxTime = 60 // seconds
     private var gameTimerCounter: Int
     private var gameTimer: Timer!
@@ -20,6 +21,7 @@ class Game: NSObject {
     private var frogTimer: Timer!
     private let frogTimerInterval = Double(2)
     private var score: Int
+    private var life: Int
     private var gameOver: Bool
     private var clickOnFrogSound: AVAudioPlayer?
     
@@ -28,6 +30,7 @@ class Game: NSObject {
         self.score = 0
         self.gameTimerCounter = 0
         self.gameOver = false
+        self.life = numOfLifes
         board = Board(numOfTiles: numOfTiles)
         
     }
@@ -79,6 +82,7 @@ class Game: NSObject {
     public func restart(){
         gameTimerCounter = 0
         score = 0
+        life = numOfLifes
         stop()
         play()
     }
@@ -100,6 +104,10 @@ class Game: NSObject {
         return score
     }
     
+    public func getLife() -> Int{
+        return life
+    }
+    
     public func getTime() -> Int{
         return gameTimerCounter
     }
@@ -108,20 +116,28 @@ class Game: NSObject {
         return board.getTileStateByPosition(pos: pos)
     }
     
+    public func getBoardTileTimerTimeByPosition(pos: Int) -> Double{
+        return board.getTileTimerTimeByPosition(pos: pos)
+    }
+    
     public func playerClickedOnTile(pos: Int){
         
         let tileState = board.getTileStateByPosition(pos: pos)
         
         if tileState == Tile.TileStates.Good{
             score += points
-            playSound(soundName: "goodSound")
+           // playSound(soundName: "goodSound")
         }
-        if tileState == Tile.TileStates.Bad && score != 0{
-            score -= points
-            playSound(soundName: "badSound")
+        if tileState == Tile.TileStates.Bad{
+            life -= points
+           // playSound(soundName: "badSound")
         }
         
          board.clickTile(pos: pos)
+        
+        if (life == 0){
+        stop()
+        }
         
     }
     

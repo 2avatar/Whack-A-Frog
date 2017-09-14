@@ -27,6 +27,7 @@
 		CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAD1F3D182F00D55DE7 /* Game.swift */; };
 		CF38FAB01F3D183C00D55DE7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAF1F3D183C00D55DE7 /* Board.swift */; };
 		CF38FAB21F3D184A00D55DE7 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAB11F3D184A00D55DE7 /* Tile.swift */; };
+		CF489C871F6A8A5A000DA8A0 /* ChooseAnImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		CF38FAAD1F3D182F00D55DE7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CF38FAAF1F3D183C00D55DE7 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		CF38FAB11F3D184A00D55DE7 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAnImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				CF092FDB1F38D1760028B9AF /* LaunchScreen.storyboard */,
 				CF092FDE1F38D1760028B9AF /* Info.plist */,
 				CF245F271F3E668E0040FA61 /* Main.swift */,
+				CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */,
 			);
 			path = WhackAFrog;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */,
 				CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */,
 				CF38FAB21F3D184A00D55DE7 /* Tile.swift in Sources */,
+				CF489C871F6A8A5A000DA8A0 /* ChooseAnImage.swift in Sources */,
 				CF38FAB01F3D183C00D55DE7 /* Board.swift in Sources */,
 				CF245F281F3E668E0040FA61 /* Main.swift in Sources */,
 				CF092FD31F38D1760028B9AF /* AppDelegate.swift in Sources */,
