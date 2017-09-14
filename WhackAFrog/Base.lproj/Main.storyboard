@@ -32,29 +32,25 @@
                                 <state key="normal" image="play.png"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="k7Q-iy-1s2">
-                                <rect key="frame" x="102" y="73" width="170" height="100"/>
+                                <rect key="frame" x="102" y="85.5" width="170" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="W1o-km-rwZ"/>
                                     <constraint firstAttribute="height" constant="100" id="z37-Pl-mDg"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAL-lP-CBf">
-                                <rect key="frame" x="112" y="539" width="151" height="30"/>
+                                <rect key="frame" x="127" y="555.5" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.85830355329999997" blue="0.37375116479999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2QU-la-wwB"/>
-                                    <constraint firstAttribute="width" constant="151" id="ZDp-bj-hGw"/>
-                                </constraints>
-                                <state key="normal" title="Choose An Image">
+                                <state key="normal" title="Scores">
                                     <color key="titleColor" red="0.53307253509999997" green="0.51295766369999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7d-Sj-P12">
-                                <rect key="frame" x="122" y="485" width="131" height="40"/>
+                                <rect key="frame" x="127" y="511.5" width="130" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.85830355330793151" blue="0.3737511647548919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="K2g-MU-sVY"/>
-                                    <constraint firstAttribute="height" constant="40" id="QXb-df-QVA"/>
+                                    <constraint firstAttribute="width" constant="130" id="OuC-IX-htV"/>
+                                    <constraint firstAttribute="height" constant="30" id="xfH-4c-Ars"/>
                                 </constraints>
                                 <state key="normal" title="Choose An Image">
                                     <color key="titleColor" red="0.53307253509999997" green="0.51295766369999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,15 +61,17 @@
                         <constraints>
                             <constraint firstItem="hdK-mN-qce" firstAttribute="width" secondItem="UQb-to-rGf" secondAttribute="height" multiplier="123:679" id="3lA-HR-28p"/>
                             <constraint firstItem="UQb-to-rGf" firstAttribute="centerY" secondItem="dzw-jG-itI" secondAttribute="centerY" id="6Jb-H6-rrI"/>
-                            <constraint firstItem="hdK-mN-qce" firstAttribute="top" secondItem="k7Q-iy-1s2" secondAttribute="bottom" constant="32.5" id="Ado-DJ-5CT"/>
+                            <constraint firstItem="hdK-mN-qce" firstAttribute="top" secondItem="k7Q-iy-1s2" secondAttribute="bottom" constant="20" id="Ado-DJ-5CT"/>
                             <constraint firstItem="hdK-mN-qce" firstAttribute="centerY" secondItem="dzw-jG-itI" secondAttribute="centerY" id="DKw-2A-CW1"/>
+                            <constraint firstItem="e7d-Sj-P12" firstAttribute="top" secondItem="hdK-mN-qce" secondAttribute="bottom" constant="50" id="FQG-sS-BaD"/>
                             <constraint firstItem="UQb-to-rGf" firstAttribute="height" secondItem="dzw-jG-itI" secondAttribute="height" id="Odv-tM-LTE"/>
                             <constraint firstItem="UQb-to-rGf" firstAttribute="centerX" secondItem="dzw-jG-itI" secondAttribute="centerX" id="RIt-Sh-stE"/>
                             <constraint firstItem="OAL-lP-CBf" firstAttribute="centerX" secondItem="e7d-Sj-P12" secondAttribute="centerX" id="ZOT-ej-Cj3"/>
                             <constraint firstItem="OAL-lP-CBf" firstAttribute="top" secondItem="e7d-Sj-P12" secondAttribute="bottom" constant="14" id="ZrP-2p-HGU"/>
-                            <constraint firstItem="e7d-Sj-P12" firstAttribute="top" secondItem="UQb-to-rGf" secondAttribute="bottom" constant="-182" id="bCC-yh-a6B"/>
                             <constraint firstItem="hdK-mN-qce" firstAttribute="centerX" secondItem="dzw-jG-itI" secondAttribute="centerX" id="bhX-mY-61f"/>
-                            <constraint firstItem="e7d-Sj-P12" firstAttribute="centerX" secondItem="hdK-mN-qce" secondAttribute="centerX" id="eUC-Fc-tT8"/>
+                            <constraint firstItem="e7d-Sj-P12" firstAttribute="centerX" secondItem="hdK-mN-qce" secondAttribute="centerX" constant="4.5" id="eUC-Fc-tT8"/>
+                            <constraint firstItem="OAL-lP-CBf" firstAttribute="width" secondItem="e7d-Sj-P12" secondAttribute="width" id="esG-GI-4bK"/>
+                            <constraint firstItem="OAL-lP-CBf" firstAttribute="height" secondItem="e7d-Sj-P12" secondAttribute="height" id="foP-ch-TC7"/>
                             <constraint firstItem="k7Q-iy-1s2" firstAttribute="leading" secondItem="UQb-to-rGf" secondAttribute="trailing" constant="-273" id="jcG-te-WbP"/>
                             <constraint firstItem="UQb-to-rGf" firstAttribute="width" secondItem="dzw-jG-itI" secondAttribute="width" id="uEn-Z2-gJa"/>
                         </constraints>
