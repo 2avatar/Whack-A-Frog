@@ -7,22 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate{
     
-    let scoreLabelString = "Score: "
-    let timeLabelString = "Time: "
-    let lifeLabelString = "Life: "
+    let scoreLabelString = "Score:"
+    let timeLabelString = "Time:"
+    let lifeLabelString = "Life:"
     let cellIdentifier = "cell"
+    let numOfCols = 4
+    let numOfRows = 3
+    let TileMargin = CGFloat(5)
+    let locationManager = CLLocationManager()
     var game: Game!
     var viewTimer: Timer!
     var viewTimerInterval = Double(1)
     var beforeGame = true
+    var latitude:Double = 0
+    var longtitude:Double = 0
     public var imageGood: UIImageView!
     public var imageBad: UIImageView!
-    let numOfCols = 4
-    let numOfRows = 3
-    let TileMargin = CGFloat(5)
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -32,15 +36,16 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
    
-       // var decoded  = UserDefaults.standard.data(forKey: Main.imageGoodKey)!
-       // var decodedImage = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UIImageView
         var data = UserDefaults.standard.object(forKey: Main.imageGoodKey) as! Data
         imageGood = UIImageView(image: UIImage(data: data))
         
-        //decoded  = UserDefaults.standard.object(forKey: Main.imageBadKey) as! Data
-        //decodedImage = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UIImageView
         data = UserDefaults.standard.object(forKey: Main.imageBadKey) as! Data
         imageBad = UIImageView(image: UIImage(data: data))
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         initiateTimer()
         game = Game(numOfTiles: numOfCols*numOfRows)
@@ -48,11 +53,23 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         initiateLabels()
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        latitude = location.coordinate.latitude
+        longtitude = location.coordinate.longitude
+        
+    }
+    
     @IBAction func goBack(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: Main.storyboardName, bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: Main.vcMainName) as UIViewController
+        
+        locationManager.stopUpdatingLocation()
         
         self.dismiss(animated: true, completion: nil)
         present(vc, animated: true, completion: nil)
@@ -62,11 +79,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
+         locationManager.stopUpdatingLocation()
+        
         if (viewTimer.isValid){
             viewTimer.invalidate()
         }
         game.stop()
-        
     }
     
     @IBAction func reset(_ sender: Any) {
@@ -75,6 +93,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         game.restart()
         initiateLabels()
         updateView()
+        locationManager.startUpdatingLocation()
           }
     
     func initiateLabels(){
@@ -132,16 +151,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
           self.collectionView.reloadData()
         scoreLabel.text = "\(scoreLabelString) \(game.getScore())"
         lifeLabel.text = "\(lifeLabelString) \(game.getLife())"
-    
-        
-//            UIView.animate(withDuration: 1, animations: { () -> Void in
-//               
-//                collectionView.collectionViewLayout.invalidateLayout()
-//            }, completion: { (finished) -> Void in
-//                
-//                
-//                collectionView.collectionViewLayout.invalidateLayout()
-//            })
         
     }
     
@@ -253,6 +262,9 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
                 collectionView.collectionViewLayout.invalidateLayout()
             })
 
+           locationManager.stopUpdatingLocation()
+           let username:String = UserDefaults.standard.string(forKey: Main.usernameKey)!
+            
         }
         
     

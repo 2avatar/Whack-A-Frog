@@ -14,7 +14,7 @@ class Game: NSObject {
     private var board: Board
     private let points = 1
     private let numOfLifes = 3
-    private let gameMaxTime = 60 // seconds
+    private let gameMaxTime = 30 // seconds
     private var gameTimerCounter: Int
     private var gameTimer: Timer!
     private let gametimerInterval = Double(1)

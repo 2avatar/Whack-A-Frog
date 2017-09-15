@@ -23,11 +23,14 @@
 		CF12A8E81F42536B004F125F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E71F42536B004F125F /* play.png */; };
 		CF12A8EA1F425370004F125F /* frog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF12A8E91F425370004F125F /* frog.jpg */; };
 		CF245F281F3E668E0040FA61 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF245F271F3E668E0040FA61 /* Main.swift */; };
-		CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */; };
+		CF38FA9A1F3C9A9C00D55DE7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FA991F3C9A9C00D55DE7 /* GameScene.swift */; };
 		CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAD1F3D182F00D55DE7 /* Game.swift */; };
 		CF38FAB01F3D183C00D55DE7 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAAF1F3D183C00D55DE7 /* Board.swift */; };
 		CF38FAB21F3D184A00D55DE7 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF38FAB11F3D184A00D55DE7 /* Tile.swift */; };
 		CF489C871F6A8A5A000DA8A0 /* ChooseAnImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */; };
+		CF489C8C1F6BE3FC000DA8A0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF489C8B1F6BE3FC000DA8A0 /* CoreLocation.framework */; };
+		CF489C8E1F6BEA89000DA8A0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C8D1F6BEA89000DA8A0 /* MapView.swift */; };
+		CF489C901F6BEA9F000DA8A0 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,11 +73,14 @@
 		CF12A8E71F42536B004F125F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		CF12A8E91F425370004F125F /* frog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frog.jpg; sourceTree = "<group>"; };
 		CF245F271F3E668E0040FA61 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		CF38FA991F3C9A9C00D55DE7 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		CF38FAAD1F3D182F00D55DE7 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CF38FAAF1F3D183C00D55DE7 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		CF38FAB11F3D184A00D55DE7 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAnImage.swift; sourceTree = "<group>"; };
+		CF489C8B1F6BE3FC000DA8A0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CF489C8D1F6BEA89000DA8A0 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF489C8C1F6BE3FC000DA8A0 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,7 @@
 				CF092FE61F38D1760028B9AF /* WhackAFrogTests */,
 				CF092FF11F38D1760028B9AF /* WhackAFrogUITests */,
 				CF092FD01F38D1760028B9AF /* Products */,
+				CF489C8A1F6BE3FB000DA8A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,13 +137,15 @@
 			isa = PBXGroup;
 			children = (
 				CF092FD21F38D1760028B9AF /* AppDelegate.swift */,
-				CF38FA991F3C9A9C00D55DE7 /* CollectionViewController.swift */,
+				CF38FA991F3C9A9C00D55DE7 /* GameScene.swift */,
 				CF092FD61F38D1760028B9AF /* Main.storyboard */,
 				CF092FD91F38D1760028B9AF /* Assets.xcassets */,
 				CF092FDB1F38D1760028B9AF /* LaunchScreen.storyboard */,
 				CF092FDE1F38D1760028B9AF /* Info.plist */,
 				CF245F271F3E668E0040FA61 /* Main.swift */,
 				CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */,
+				CF489C8D1F6BEA89000DA8A0 /* MapView.swift */,
+				CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */,
 			);
 			path = WhackAFrog;
 			sourceTree = "<group>";
@@ -181,6 +191,14 @@
 				CF38FAB11F3D184A00D55DE7 /* Tile.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		CF489C8A1F6BE3FB000DA8A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF489C8B1F6BE3FC000DA8A0 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,9 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF38FA9A1F3C9A9C00D55DE7 /* CollectionViewController.swift in Sources */,
+				CF38FA9A1F3C9A9C00D55DE7 /* GameScene.swift in Sources */,
+				CF489C8E1F6BEA89000DA8A0 /* MapView.swift in Sources */,
 				CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */,
 				CF38FAB21F3D184A00D55DE7 /* Tile.swift in Sources */,
+				CF489C901F6BEA9F000DA8A0 /* TableView.swift in Sources */,
 				CF489C871F6A8A5A000DA8A0 /* ChooseAnImage.swift in Sources */,
 				CF38FAB01F3D183C00D55DE7 /* Board.swift in Sources */,
 				CF245F281F3E668E0040FA61 /* Main.swift in Sources */,
