@@ -31,6 +31,8 @@
 		CF489C8C1F6BE3FC000DA8A0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF489C8B1F6BE3FC000DA8A0 /* CoreLocation.framework */; };
 		CF489C8E1F6BEA89000DA8A0 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C8D1F6BEA89000DA8A0 /* MapView.swift */; };
 		CF489C901F6BEA9F000DA8A0 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */; };
+		CF489C921F6C1A79000DA8A0 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF489C911F6C1A79000DA8A0 /* DatabaseController.swift */; };
+		CF489CD21F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF489CD01F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		CF489C8B1F6BE3FC000DA8A0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CF489C8D1F6BEA89000DA8A0 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		CF489C911F6C1A79000DA8A0 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		CF489CD11F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhackAFrog.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				CF489C861F6A8A5A000DA8A0 /* ChooseAnImage.swift */,
 				CF489C8D1F6BEA89000DA8A0 /* MapView.swift */,
 				CF489C8F1F6BEA9F000DA8A0 /* TableView.swift */,
+				CF489C911F6C1A79000DA8A0 /* DatabaseController.swift */,
+				CF489CD01F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodeld */,
 			);
 			path = WhackAFrog;
 			sourceTree = "<group>";
@@ -344,6 +350,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF489CD21F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodeld in Sources */,
+				CF489C921F6C1A79000DA8A0 /* DatabaseController.swift in Sources */,
 				CF38FA9A1F3C9A9C00D55DE7 /* GameScene.swift in Sources */,
 				CF489C8E1F6BEA89000DA8A0 /* MapView.swift in Sources */,
 				CF38FAAE1F3D182F00D55DE7 /* Game.swift in Sources */,
@@ -620,6 +628,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CF489CD01F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CF489CD11F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodel */,
+			);
+			currentVersion = CF489CD11F6C1CCF000DA8A0 /* WhackAFrog.xcdatamodel */;
+			path = WhackAFrog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CF092FC71F38D1760028B9AF /* Project object */;
 }
