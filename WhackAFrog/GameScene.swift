@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate{
     
@@ -245,6 +246,7 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
 
         if (game.over()){
+            
             viewTimer.invalidate()
 
             cell.backgroundColor = UIColor.blue
@@ -261,14 +263,56 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 cell.center.y = initialY
                 collectionView.collectionViewLayout.invalidateLayout()
             })
-
-           locationManager.stopUpdatingLocation()
-           let username:String = UserDefaults.standard.string(forKey: Main.usernameKey)!
+            
+            storeData()
             
         }
         
     
         return cell
+    }
+    
+    func storeData(){
+        
+        let fetchRequest:NSFetchRequest<Scores> = Scores.fetchRequest()
+        locationManager.stopUpdatingLocation()
+        let username:String = UserDefaults.standard.string(forKey: Main.usernameKey)!
+        let scores:Scores = NSEntityDescription.insertNewObject(forEntityName: Main.scoresClassName, into: DatabaseController.getContext()) as! Scores
+
+        do{
+            
+            let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
+            
+            if (searchResults.count == 10){
+                
+                var minScore = Int32(1000)
+                var found:Bool = false
+                
+                for result in searchResults as [Scores]{
+                    if (minScore > result.score){
+                        minScore = result.score
+                    }
+                }
+                
+                for result in searchResults as [Scores]{
+                    if ((minScore == result.score) && !found){
+                        found = true
+                        DatabaseController.getContext().delete(result)
+                    }
+                }
+            }
+         
+                scores.latitude = self.latitude
+                scores.longtitude = self.longtitude
+                scores.name = username
+                scores.score = Int32(game.getScore())
+                
+                DatabaseController.saveContext()
+            
+        }
+        catch{
+            print("Database Error: \(error)")
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {

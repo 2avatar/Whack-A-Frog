@@ -11,9 +11,17 @@ import CoreData
 
 class DatabaseController{
     
+    private init(){
+        
+    }
+    
+    class func getContext() -> NSManagedObjectContext{
+        return DatabaseController.persistentContainer.viewContext
+    }
+    
     // MARK: - Core Data stack
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    static var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -42,7 +50,7 @@ class DatabaseController{
     
     // MARK: - Core Data Saving support
     
-    func saveContext () {
+    class func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

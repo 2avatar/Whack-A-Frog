@@ -24,6 +24,7 @@ class Main: UIViewController{
     static let vcTableViewName = "tableView"
     static let imageGoodURL = "Images/good.png"
     static let imageBadURL = "Images/bad.png"
+    static let scoresClassName = String(describing: Scores.self)
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var chooseAnImage: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!

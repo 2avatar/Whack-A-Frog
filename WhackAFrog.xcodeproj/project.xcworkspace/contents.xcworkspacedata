@@ -5,6 +5,12 @@
       location = "container:"
       name = "New Group">
       <FileRef
+         location = "group:../WhackAFrog/Scores+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:../WhackAFrog/Scores+CoreDataProperties.swift">
+      </FileRef>
+      <FileRef
          location = "self:">
       </FileRef>
    </Group>
