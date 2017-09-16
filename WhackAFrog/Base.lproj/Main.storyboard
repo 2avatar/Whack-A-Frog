@@ -228,18 +228,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fsx-2k-vlF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="421"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fsx-2k-vlF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="639" id="esA-fw-ZHO"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="FU0-rk-1hN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FU0-rk-1hN" id="9iv-kC-PIT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ACN-Wt-H8Y" id="HZM-za-4w1"/>
+                                    <outlet property="delegate" destination="ACN-Wt-H8Y" id="Oaa-tC-yUG"/>
+                                </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eW6-FS-1jz">
+                                <rect key="frame" x="0.0" y="639" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Table View"/>
+                                    <segment title="Map View"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Fsx-2k-vlF" firstAttribute="width" secondItem="aKb-A7-U4R" secondAttribute="width" id="DVg-o2-KLW"/>
-                            <constraint firstItem="Fsx-2k-vlF" firstAttribute="centerX" secondItem="aKb-A7-U4R" secondAttribute="centerX" id="lKk-gA-kwT"/>
+                            <constraint firstItem="eW6-FS-1jz" firstAttribute="top" secondItem="Fsx-2k-vlF" secondAttribute="bottom" id="F41-c6-X4z"/>
+                            <constraint firstItem="Fsx-2k-vlF" firstAttribute="centerX" secondItem="aKb-A7-U4R" secondAttribute="centerX" id="Mcj-UK-KPX"/>
+                            <constraint firstItem="eW6-FS-1jz" firstAttribute="width" secondItem="aKb-A7-U4R" secondAttribute="width" id="g1U-v9-3Ks"/>
+                            <constraint firstItem="Fsx-2k-vlF" firstAttribute="width" secondItem="aKb-A7-U4R" secondAttribute="width" id="kg5-pt-8mT"/>
+                            <constraint firstItem="Fsx-2k-vlF" firstAttribute="top" secondItem="AWS-X0-5Go" secondAttribute="bottom" constant="-20" id="qTM-44-O8D"/>
+                            <constraint firstItem="eW6-FS-1jz" firstAttribute="centerX" secondItem="Fsx-2k-vlF" secondAttribute="centerX" id="r4e-KW-26s"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="segmentControl" destination="eW6-FS-1jz" id="RWN-0k-ygN"/>
                         <outlet property="tableView" destination="Fsx-2k-vlF" id="kVl-Xf-O1D"/>
                     </connections>
                 </viewController>
@@ -259,21 +288,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-gp-04l">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZzF-gp-04l">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="640"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="550" id="Xrk-lJ-vva"/>
+                                    <constraint firstAttribute="height" constant="640" id="qa8-wl-LN0"/>
                                 </constraints>
                             </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="cMl-tx-oGj">
+                                <rect key="frame" x="0.0" y="639" width="375" height="29"/>
+                                <segments>
+                                    <segment title="Table View"/>
+                                    <segment title="Map View"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZzF-gp-04l" firstAttribute="width" secondItem="fEb-4B-Syb" secondAttribute="width" id="RMT-Ji-zog"/>
-                            <constraint firstItem="ZzF-gp-04l" firstAttribute="centerX" secondItem="fEb-4B-Syb" secondAttribute="centerX" id="vb9-uH-MgR"/>
+                            <constraint firstItem="ZzF-gp-04l" firstAttribute="width" secondItem="fEb-4B-Syb" secondAttribute="width" id="04N-AO-VHv"/>
+                            <constraint firstItem="cMl-tx-oGj" firstAttribute="width" secondItem="fEb-4B-Syb" secondAttribute="width" id="GtV-Uo-aNn"/>
+                            <constraint firstItem="cMl-tx-oGj" firstAttribute="top" secondItem="ZzF-gp-04l" secondAttribute="bottom" constant="-1" id="Kiw-57-BsX"/>
+                            <constraint firstItem="ZzF-gp-04l" firstAttribute="top" secondItem="pwS-j7-S9I" secondAttribute="bottom" constant="-20" id="NwI-5E-Wfh"/>
+                            <constraint firstItem="cMl-tx-oGj" firstAttribute="centerX" secondItem="fEb-4B-Syb" secondAttribute="centerX" id="odp-c4-p2n"/>
+                            <constraint firstItem="ZzF-gp-04l" firstAttribute="centerX" secondItem="fEb-4B-Syb" secondAttribute="centerX" id="rkO-Gs-58D"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="ZzF-gp-04l" id="nY0-FV-DhM"/>
+                        <outlet property="mapView" destination="ZzF-gp-04l" id="j3S-Hk-e9s"/>
+                        <outlet property="segmentControl" destination="cMl-tx-oGj" id="gsA-xW-VDY"/>
+                        <outlet property="switch" destination="cMl-tx-oGj" id="Jdi-3U-rDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbe-PX-uX8" userLabel="First Responder" sceneMemberID="firstResponder"/>

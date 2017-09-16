@@ -11,8 +11,9 @@ import MapKit
 
 class MapView: UIViewController{
     
-    
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
