@@ -15,14 +15,15 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     let scoreLabelString = "Score:"
     let timeLabelString = "Time:"
     let lifeLabelString = "Life:"
-    let cellIdentifier = "cell"
+    let collectionViewCellName = "CVCell"
     let numOfCols = 4
     let numOfRows = 3
+    let maxScores = 10
     let TileMargin = CGFloat(5)
     let locationManager = CLLocationManager()
     var game: Game!
     var viewTimer: Timer!
-    var viewTimerInterval = Double(1)
+    var viewTimerInterval = Double(0.5)
     var beforeGame = true
     var latitude:Double = 0
     var longtitude:Double = 0
@@ -65,6 +66,10 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     @IBAction func goBack(_ sender: Any) {
+        
+        if (game.over()){
+         storeData()
+        }
         
         let storyboard = UIStoryboard(name: Main.storyboardName, bundle: nil)
         
@@ -182,7 +187,7 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as UICollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellName, for: indexPath) as UICollectionViewCell
         
         timerLabel.text = "\(timeLabelString) \(game.getTime())"
         
@@ -220,28 +225,28 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         if (isTileBad(position: position) && cell.backgroundView == nil){
             
             cell.backgroundView = imageBad
-            cell.backgroundView!.alpha = 0
-            UIView.animate(withDuration: 1, animations: { () -> Void in
-                cell.backgroundView!.alpha = 1
-                collectionView.collectionViewLayout.invalidateLayout()
-            }, completion: { (finished) -> Void in
-        
-                collectionView.collectionViewLayout.invalidateLayout()
-            })
+        //    cell.backgroundView!.alpha = 0
+        //    UIView.animate(withDuration: 1, animations: { () -> Void in
+        //        cell.backgroundView!.alpha = 1
+         //       collectionView.collectionViewLayout.invalidateLayout()
+        //    }, completion: { (finished) -> Void in
+        //
+        //        collectionView.collectionViewLayout.invalidateLayout()
+        //    })
            
         }
         
         if (isTileGood(position: position) && cell.backgroundView == nil){
             
             cell.backgroundView = imageGood
-            cell.backgroundView!.alpha = 0
-            UIView.animate(withDuration: 1, animations: { () -> Void in
-                cell.backgroundView!.alpha = 1
-                collectionView.collectionViewLayout.invalidateLayout()
-            }, completion: { (finished) -> Void in
+         //   cell.backgroundView!.alpha = 0
+         //   UIView.animate(withDuration: 1, animations: { () -> Void in
+          //      cell.backgroundView!.alpha = 1
+          //      collectionView.collectionViewLayout.invalidateLayout()
+         //   }, completion: { (finished) -> Void in
                 
-                collectionView.collectionViewLayout.invalidateLayout()
-            })
+          //      collectionView.collectionViewLayout.invalidateLayout()
+          //  })
 
         }
 
@@ -263,9 +268,7 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
                 cell.center.y = initialY
                 collectionView.collectionViewLayout.invalidateLayout()
             })
-            
-            storeData()
-            
+
         }
         
     
@@ -274,40 +277,74 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     func storeData(){
         
-        let fetchRequest:NSFetchRequest<Scores> = Scores.fetchRequest()
         locationManager.stopUpdatingLocation()
+        let fetchRequest:NSFetchRequest<Scores> = Scores.fetchRequest()
         let username:String = UserDefaults.standard.string(forKey: Main.usernameKey)!
-        let scores:Scores = NSEntityDescription.insertNewObject(forEntityName: Main.scoresClassName, into: DatabaseController.getContext()) as! Scores
-
+        
         do{
             
             let searchResults = try DatabaseController.getContext().fetch(fetchRequest)
-            
-            if (searchResults.count == 10){
+            var minScore = Int32(1000)
+            var found:Bool = false
+
+            if (game.getScore() != 0){
                 
-                var minScore = Int32(1000)
-                var found:Bool = false
+    
+                
+            if (searchResults.count >= maxScores){
+                
+                NSLog("\(searchResults.count)")
                 
                 for result in searchResults as [Scores]{
-                    if (minScore > result.score){
+                    if (minScore > result.score && result.score != 0){
                         minScore = result.score
                     }
                 }
-                
-                for result in searchResults as [Scores]{
-                    if ((minScore == result.score) && !found){
-                        found = true
-                        DatabaseController.getContext().delete(result)
+                NSLog("\(minScore)")
+                NSLog("\(game.getScore())")
+                if (minScore < Int32(game.getScore())){
+                    for result in searchResults as [Scores]{
+                        if ((minScore == result.score) && !found){
+                            
+                            NSLog("Inside")
+                            found = true
+                            DatabaseController.getContext().delete(result)
+                            
+                            DatabaseController.saveContext()
+
+                            let scores:Scores = NSEntityDescription.insertNewObject(forEntityName: Main.scoresClassName, into: DatabaseController.getContext()) as! Scores
+
+                            
+                            scores.latitude = self.latitude
+                            scores.longtitude = self.longtitude
+                            scores.name = username
+                            scores.score = Int32(game.getScore())
+                            
+                            DatabaseController.saveContext()
+                            
+                        }
                     }
                 }
             }
-         
+            else{
+                
+                let scores:Scores = NSEntityDescription.insertNewObject(forEntityName: Main.scoresClassName, into: DatabaseController.getContext()) as! Scores
+
+                
+                NSLog("Inside 2")
                 scores.latitude = self.latitude
                 scores.longtitude = self.longtitude
                 scores.name = username
                 scores.score = Int32(game.getScore())
                 
                 DatabaseController.saveContext()
+
+            }
+        }
+  
+   
+            
+            
             
         }
         catch{

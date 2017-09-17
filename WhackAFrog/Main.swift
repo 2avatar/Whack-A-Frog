@@ -11,8 +11,7 @@ import UIKit
 class Main: UIViewController{
     
     enum Difficulty{ case Hard, Medium, Easy }
-    
-    
+
     static let imageGoodKey = "imageGoodKey"
     static let imageBadKey = "imageBadKey"
     static let usernameKey = "usernameKey"
@@ -28,6 +27,7 @@ class Main: UIViewController{
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var chooseAnImage: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,26 @@ class Main: UIViewController{
         }
             UserDefaults.standard.synchronize()
     }
+    
+    @IBAction func onClickMapScores(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: Main.storyboardName, bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: Main.vcMapViewName) as UIViewController
+        
+        self.dismiss(animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
+        
+    }
+    @IBAction func onClickTableScores(_ sender: Any) {
+        let storyboard = UIStoryboard(name: Main.storyboardName, bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: Main.vcTableViewName) as UIViewController
+        
+        self.dismiss(animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
+    }
+    
     
     
     
