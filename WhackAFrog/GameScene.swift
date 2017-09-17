@@ -23,7 +23,7 @@ class GameScene: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     let locationManager = CLLocationManager()
     var game: Game!
     var viewTimer: Timer!
-    var viewTimerInterval = Double(0.5)
+    var viewTimerInterval = Double(1)
     var beforeGame = true
     var latitude:Double = 0
     var longtitude:Double = 0

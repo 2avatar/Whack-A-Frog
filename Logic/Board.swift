@@ -13,9 +13,9 @@ class Board: NSObject {
     private var board: [Tile]
     private let numOfTiles: Int
     private let minTileTime = 2
-    private let maxTileTime = 4
+    private let maxTileTime = 5
     private let minNumberOfTiles = 2
-    private let maxNumberOfTiles = 4
+    private let maxNumberOfTiles = 5
     
     init (numOfTiles: Int){
         board = [Tile]()

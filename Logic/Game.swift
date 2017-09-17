@@ -19,7 +19,7 @@ class Game: NSObject {
     private var gameTimer: Timer!
     private let gametimerInterval = Double(1)
     private var frogTimer: Timer!
-    private let frogTimerInterval = Double(2)
+    private let frogTimerInterval = Double(1)
     private var score: Int
     private var life: Int
     private var gameOver: Bool
